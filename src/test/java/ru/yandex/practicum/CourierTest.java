@@ -92,17 +92,17 @@ public class CourierTest {
         assertEquals(SC_NOT_FOUND, responseLoginCourier.statusCode());
 }
 
-    @Test
-    public void canNotLoginWithOutLoginTest() {
-
-        assertEquals(SC_CREATED, responseCreateCourier.statusCode());
-        assertTrue(responseCreateCourier.body().jsonPath().getBoolean("ok"));
-
-        CourierCredentials courierCredentials = new CourierCredentials();
-        courierCredentials.setPassword(courier.getPassword());
-        Response responseLoginCourier = loginCourier(courierCredentials);
-        assertEquals(SC_BAD_REQUEST, responseLoginCourier.statusCode());
-    }
+//    @Test
+//    public void canNotLoginWithOutLoginTest() {
+//
+//        assertEquals(SC_CREATED, responseCreateCourier.statusCode());
+//        assertTrue(responseCreateCourier.body().jsonPath().getBoolean("ok"));
+//
+//        CourierCredentials courierCredentials = new CourierCredentials();
+//        courierCredentials.setPassword(courier.getPassword());
+//        Response responseLoginCourier = loginCourier(courierCredentials);
+//        assertEquals(SC_BAD_REQUEST, responseLoginCourier.statusCode());
+//    }
 
     @Test
     public void canNotLoginWithOutPasswordTest() {
